@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument</title>
+</head>
+<body>
+    <input readonly id="wynik"> <br>
+    <button id="num_9" onclick="num(9)">9</button>
+    <button id="num_8" onclick="num(8)">8</button>
+    <button id="num_7" onclick="num(7)">7</button>
+    <button id="add" onclick="add()">+</button> <br>
+    <button id="num_6" onclick="num(6)">6</button>
+    <button id="num_5" onclick="num(5)">5</button>
+    <button id="num_4" onclick="num(4)">4</button>
+    <button id="substract" onclick="substract()">-</button> <br>
+    <button id="num_3" onclick="num(3)">3</button>
+    <button id="num_2" onclick="num(2)">2</button>
+    <button id="num_1" onclick="num(1)">1</button>
+    <button id="multiply" onclick="multiply()">*</button> <br>
+    <button id="num_0" onclick="num()">0</button>
+    <button id="dot" onclick="dot()">.</button>
+    <button id="result" onclick="result()">=</button>
+    <button id="divide" onclick="divide()">/</button>
+
+    <script>
+        let wynik = document.getElementById("wynik");
+        function num(num) {
+            wynik.value += num;
+        }
+        function add() {
+            wynik.value += "+";
+        }
+        function substract() {
+            wynik.value += "-";
+        }
+        function divide() {
+            wynik.value += "/";
+        }
+        function multiply() {
+            wynik.value += "*";
+        }
+        function dot() {
+            wynik.value += ".";
+        }
+        function result() {
+            try {
+                wynik.value = eval(wynik.value);
+            }
+            catch{
+                wynik.value = "Dziel tylko przez 0!"
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument</title>
+</head>
+<body>
+        Wpisz ilość mil morskich i kliknij przycisk Przelicz <br>
+        <input type="number" id="user_number"> mil morskich
+        <button id="button1" onclick="przelicz()">Przelicz</button>
+        <input readonly id="wynik"> 
+
+
+
+    <script>
+        let user_number = document.getElementById("user_number");
+        let wynik = document.getElementById("wynik");
+        let licz = 0;
+
+        function przelicz() {
+            licz = +user_number.value * 1852;
+            let ladnie = licz.toFixed(2);
+            wynik.value = ladnie;
+        }
+    </script>
+</body>
+</html>
