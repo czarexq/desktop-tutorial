@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+Szerokość: <input id="szerokosc" type="number">
+Długość: <input id="dlugosc" type="number"> <br>
+<button onclick="calculate()">Calculate</button> <br> <hr>
+<p id="powierzchnia"></p>
+<p id="wynik"></p>
+
+<script>
+let szerokosc = document.getElementById("szerokosc");
+let dlugosc = document.getElementById("dlugosc");
+let wysokosc = 2.70;
+let powierzchnia = document.getElementById("powierzchnia");
+let wynik = document.getElementById("wynik");
+let cacl1 = 0;
+
+function calculate() {
+    let podloga = +szerokosc.value * +dlugosc.value;
+    let bok1 = +szerokosc.value * wysokosc;
+    let bok2 = +dlugosc.value * wysokosc;
+    cacl1 = ((bok1*2) + (2*bok2) + podloga).toFixed(2);
+    powierzchnia.innerText = `Powierzchnia wynosi: ${cacl1} m²`;
+    wynik.innerText = `Cena wynosi: ${(cacl1 * 7).toFixed(2)} zł`;
+
+}
+</script>
+</body>
+</html>

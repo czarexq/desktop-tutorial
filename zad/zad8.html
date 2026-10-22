@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument</title>
+</head>
+<body>
+    a: <input type="number" id="num_1"> <br>
+    b: <input type="number" id="num_2"> <br> <br>
+
+    <button onclick="dodaj()">+</button>
+    <button onclick="odejmij()">-</button>
+    <button onclick="mnoz()">*</button>
+    <button onclick="dziel()">/</button> <br>
+
+    Wynik to: <p id="wynik"></p>
+
+    <script>
+        let a = document.getElementById("num_1");
+        let b = document.getElementById("num_2");
+        let wynik = document.getElementById("wynik");
+
+        function dodaj() {
+            wynik.innerText = +a.value + +b.value;
+        }
+        function odejmij() {
+            wynik.innerText = +a.value - +b.value;
+        }
+        function mnoz() {
+            wynik.innerText = +a.value * +b.value;
+        }
+        function dziel() {
+            if (b.value == 0) {
+                wynik.innerHTML = "Nie możesz dzielić przez 0";
+            }
+            else {
+                wynik.innerText = +a.value / +b.value;
+            }
+            
+        }
+    </script>
+</body>
+</html>
